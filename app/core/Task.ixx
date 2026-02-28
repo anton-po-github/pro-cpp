@@ -82,7 +82,7 @@ public:
 
     void PrintDetails() const override
     {
-        std::cout << "🚀 [FEATURE] " << title << " (Epic: " << epicName << ")\n";
+        std::cout << "[FEATURE] " << title << " (Epic: " << epicName << ")\n";
     }
 };
 
@@ -103,6 +103,6 @@ public:
     void PrintDetails() const override
     {
         std::string priorityStr = (priority == TaskPriority::Critical) ? "CRITICAL" : "NORMAL";
-        std::cout << "🐛 [BUGFIX]  " << title << " (Priority: " << priorityStr << ")\n";
+        std::cout << "[BUGFIX]  " << title << " (Priority: " << priorityStr << ")\n";
     }
 };

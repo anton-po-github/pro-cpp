@@ -2,23 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
             "label": "DEBUG-BUILD-MSVC",
-            "command": "cl.exe",
+            "type": "process",
+            "command": "powershell",
             "args": [
-                "/Zi",
-                "/EHsc",
-                "/nologo",
-                "/Fe${fileDirname}\\debug_build_999.exe",
-                "${file}"
+                "-ExecutionPolicy", "Bypass",
+                "-NoProfile",
+                "-File", "${workspaceFolder}\\.vscode\\build.ps1"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
-            "problemMatcher": [
-                "$msCompile"
-            ],
-            "group": "build"
+            "problemMatcher": ["$msCompile"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

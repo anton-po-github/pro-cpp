@@ -5,31 +5,6 @@ import ProjectManagerModule;
 
 int main()
 {
-    try
-    {
-        std::cout << "Step 1: Creating valid task...\n";
-        // FIX: We must instantiate a specific class (FeatureTask), not the abstract BaseTask!
-        FeatureTask task1(101, "Learn C++ Default Arguments", "C++ Mastery");
-
-        std::cout << "\nStep 2: Trying to create INVALID task (Empty title)...\n";
-        // This will explode!
-        FeatureTask task2(102, "", "C++ Mastery");
-    }
-    catch (const TaskValidationException &ex)
-    {
-        std::cerr << "\n🔥 [CATCHED ERROR]: " << ex.what() << std::endl;
-    }
-    catch (const std::exception &ex)
-    {
-        std::cerr << "System error: " << ex.what() << std::endl;
-    }
-
-    std::cout << "\n--- App continues to run safely ---\n";
-    return 0;
-}
-
-/* int main()
-{
     std::cout << "--- Starting Application ---\n\n";
 
     {
@@ -53,5 +28,30 @@ int main()
     } // <-- HERE is where the magic happens! 'manager' is destroyed.
 
     std::cout << "\n--- Application Finished Successfully ---\n";
+    return 0;
+}
+
+/* int main()
+{
+    try
+    {
+        std::cout << "Step 1: Creating valid task...\n";
+        // FIX: We must instantiate a specific class (FeatureTask), not the abstract BaseTask!
+        FeatureTask task1(101, "Learn C++ Default Arguments", "C++ Mastery");
+
+        std::cout << "\nStep 2: Trying to create INVALID task (Empty title)...\n";
+        // This will explode!
+        FeatureTask task2(102, "", "C++ Mastery");
+    }
+    catch (const TaskValidationException &ex)
+    {
+        std::cerr << "\n [CATCHED ERROR]: " << ex.what() << std::endl;
+    }
+    catch (const std::exception &ex)
+    {
+        std::cerr << "System error: " << ex.what() << std::endl;
+    }
+
+    std::cout << "\n--- App continues to run safely ---\n";
     return 0;
 } */

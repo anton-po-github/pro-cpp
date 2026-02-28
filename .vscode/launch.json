@@ -2,13 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "⚙️ PRO C++ Debug",
+            "name": "PRO C++ Debug",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${fileDirname}\\debug_build_999.exe",
+            "program": "${workspaceFolder}/.build_debug/debug_build_999.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "integratedTerminal",
             "preLaunchTask": "DEBUG-BUILD-MSVC"
